@@ -31,6 +31,8 @@
     #collab { background:#0077b6; color:white; }
     @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
     @media(max-width:600px){ nav { flex-direction:column; } nav a { margin:8px 0; } }
+    .doc-link { display:inline-block; margin-top:15px; padding:12px 20px; background:#90e0ef; color:#023e8a; font-weight:bold; border-radius:10px; text-decoration:none; transition: background 0.3s, transform 0.2s; }
+    .doc-link:hover { background:#48cae4; transform: scale(1.05); }
   </style>
 </head>
 <body>
@@ -78,8 +80,8 @@
 <!-- Collaboration Space -->
 <section id="collab">
   <h2><i class="fas fa-users"></i> Collaboration Space</h2>
-  <p>Students can collaborate on this shared document:</p>
-  <iframe src="https://docs.google.com/document/d/e/2PACX-1vQXJBGQMQ5B-L8HuT5lpbjgs0cec3m-Djad-CYFsKeUHdbu060Yt549qmpDmzXPCb893Iu3Bj3VlR2z/pub?embedded=true" width="100%" height="500"></iframe>
+  <p>Click the link below to collaborate with your classmates in real-time:</p>
+  <a href="https://docs.google.com/document/d/1_omvGg-SrCqKbnuldXXccrG87w_oHA9tG8QhSOL1x1w/edit?usp=sharing" target="_blank" class="doc-link">Open Shared Google Doc</a>
 </section>
 
 <footer>
@@ -88,9 +90,5 @@
 
 </body>
 </html>
-
-
-
-
 
 
