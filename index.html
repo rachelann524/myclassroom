@@ -2,237 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Science Classroom Hub</title>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
       margin: 0;
-      display: flex;
-      min-height: 100vh;
-      background: #f0f9ff;
+      padding: 0;
+      color: #333;
     }
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: linear-gradient(180deg, #1e3a8a, #2563eb);
+    header {
+      background: #004d66;
       color: white;
       padding: 20px;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
-    }
-    .sidebar h2 {
       text-align: center;
-      margin-bottom: 20px;
-      font-size: 1.5em;
     }
-    .sidebar a {
-      display: block;
-      color: white;
+    nav {
+      background: #007799;
       padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
       text-decoration: none;
-      border-radius: 5px;
-      margin-bottom: 8px;
-      transition: 0.3s;
+      margin: 0 15px;
       font-weight: bold;
     }
-    .sidebar a:hover {
-      background: #3b82f6;
+    nav a:hover {
+      text-decoration: underline;
     }
-    /* Content */
-    .content {
-      flex: 1;
-      padding: 30px;
-    }
-    .content h1 {
-      color: #1e3a8a;
-    }
-    .topic {
-      margin-bottom: 20px;
-      border: 2px solid #2563eb;
-      border-radius: 10px;
-      padding: 15px;
+    section {
+      margin: 20px;
+      padding: 20px;
       background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .topic h3 {
-      cursor: pointer;
-      margin: 0;
-      color: #1e3a8a;
+    h2 {
+      color: #004d66;
     }
-    .topic-content {
-      display: none;
-      margin-top: 10px;
-    }
-    .topic.active .topic-content {
-      display: block;
-    }
-    /* Bell Ringer */
-    .bell-ringer {
-      background: #e0f2fe;
-      border: 2px solid #0ea5e9;
+    footer {
+      text-align: center;
+      background: #004d66;
+      color: white;
       padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .bell-ringer input, .bell-ringer button {
-      margin-top: 10px;
-      padding: 8px;
-    }
-    /* Response Board */
-    .response-board {
-      background: #e6fffa;
-      border: 2px solid #14b8a6;
-      padding: 15px;
-      border-radius: 10px;
       margin-top: 20px;
     }
-    .response-board form input, 
-    .response-board form textarea, 
-    .response-board form button {
-      display: block;
+    iframe {
       width: 100%;
-      margin-top: 10px;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    .response-board button {
-      background: #14b8a6;
-      color: white;
+      height: 500px;
       border: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .response-board button:hover {
-      background: #0f766e;
-    }
-    .responses {
-      margin-top: 15px;
-      padding: 10px;
-      background: #ffffff;
-      border-radius: 8px;
-      border: 1px solid #94a3b8;
-      max-height: 250px;
-      overflow-y: auto;
-    }
-    .response {
-      border-bottom: 1px solid #e2e8f0;
-      padding: 8px 0;
-    }
-    .response:last-child {
-      border-bottom: none;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>🔬 Welcome to Our Science Hub</h1>
+    <p>Learning, Exploring, and Sharing Ideas</p>
+  </header>
 
-  <div class="sidebar">
-    <h2>🔬 Science Hub</h2>
-    <a href="#bell-ringer">Bell Ringer</a>
-    <a href="#topic1">Topic 1</a>
-    <a href="#topic2">Topic 2</a>
-    <a href="#topic3">Topic 3</a>
-    <a href="#response-board">Response Board</a>
-  </div>
+  <nav>
+    <a href="#bellringer">Bell Ringer</a>
+    <a href="#resources">Resources</a>
+    <a href="#submit">Answer Submission</a>
+  </nav>
 
-  <div class="content">
-    <h1>Welcome to Science Class 🌍</h1>
-    <p>Explore topics, complete bell ringers, and share your thoughts below!</p>
+  <!-- Bell Ringer -->
+  <section id="bellringer">
+    <h2>Bell Ringer</h2>
+    <p><strong>Question:</strong> Why do you think clean water is important for both humans and the environment?</p>
+    <p>Please submit your answer in the submission section below ⬇️</p>
+  </section>
 
-    <!-- Bell Ringer -->
-    <div id="bell-ringer" class="bell-ringer">
-      <h2>📝 Bell Ringer</h2>
-      <p>Question: Why is clean water essential for ecosystems and human health?</p>
-      <input type="text" id="bellRingerAnswer" placeholder="Type your answer here...">
-      <br>
-      <button onclick="submitAnswer()">Submit</button>
-      <p id="answerOutput" style="margin-top:10px; font-weight: bold; color:#0f766e;"></p>
-    </div>
+  <!-- Resources -->
+  <section id="resources">
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://www.epa.gov" target="_blank">EPA – Environmental Protection Agency</a></li>
+      <li><a href="https://www.awwa.org" target="_blank">AWWA – American Water Works Association</a></li>
+      <li><a href="https://www.nationalgeographic.com/environment" target="_blank">National Geographic Environment</a></li>
+    </ul>
+  </section>
 
-    <!-- Topics -->
-    <div id="topic1" class="topic">
-      <h3>🌊 Topic 1: Water Pollution</h3>
-      <div class="topic-content">
-        <p>This unit covers water pollution and its impact on ecosystems.</p>
-        <ul>
-          <li><a href="https://www.epa.gov/" target="_blank">EPA – Environmental Protection Agency</a></li>
-          <li><a href="https://www.awwa.org/" target="_blank">AWWA – American Water Works Association</a></li>
-        </ul>
-      </div>
-    </div>
+  <!-- Answer Submission -->
+  <section id="submit">
+    <h2>Submit Your Answer</h2>
+    <p>Use the form below to submit your bell ringer and activity responses.</p>
 
-    <div id="topic2" class="topic">
-      <h3>📊 Topic 2: Data in Science</h3>
-      <div class="topic-content">
-        <p>Learn how to analyze datasets using charts and graphs.</p>
-        <ul>
-          <li><a href="https://www.google.com/publicdata/directory" target="_blank">Google Public Data</a></li>
-        </ul>
-      </div>
-    </div>
+    <!-- Replace the src URL below with your own Google Form embed link -->
+    <iframe src="https://docs.google.com/forms/d/e/your-google-form-id/viewform?embedded=true">
+      Loading…
+    </iframe>
+  </section>
 
-    <div id="topic3" class="topic">
-      <h3>🛰️ Topic 3: Remote Sensing</h3>
-      <div class="topic-content">
-        <p>Explore how GIS and satellite imagery help us study the Earth.</p>
-        <ul>
-          <li><a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a></li>
-          <li><a href="https://www.usgs.gov/" target="_blank">USGS – United States Geological Survey</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Response Board -->
-    <div id="response-board" class="response-board">
-      <h2>💡 Class Response Board</h2>
-      <form id="responseForm">
-        <input type="text" id="studentName" placeholder="Your name" required>
-        <textarea id="studentResponse" rows="3" placeholder="Type your response..." required></textarea>
-        <button type="submit">Submit Response</button>
-      </form>
-
-      <div class="responses" id="responsesList">
-        <h3>Submitted Responses:</h3>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Collapsible topics
-    document.querySelectorAll(".topic h3").forEach(header => {
-      header.addEventListener("click", () => {
-        header.parentElement.classList.toggle("active");
-      });
-    });
-
-    // Bell Ringer
-    function submitAnswer() {
-      const answer = document.getElementById("bellRingerAnswer").value;
-      const output = document.getElementById("answerOutput");
-      if (answer.trim() === "") {
-        output.textContent = "Please enter an answer!";
-      } else {
-        output.textContent = "✅ Thank you for your response: " + answer;
-      }
-    }
-
-    // Response Board
-    const form = document.getElementById("responseForm");
-    const responsesList = document.getElementById("responsesList");
-
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = document.getElementById("studentName").value;
-      const response = document.getElementById("studentResponse").value;
-
-      const div = document.createElement("div");
-      div.classList.add("response");
-      div.innerHTML = `<strong>${name}:</strong> ${response}`;
-
-      responsesList.appendChild(div);
-
-      form.reset();
-    });
-  </script>
-
+  <footer>
+    <p>© 2025 Science Hub | Created for Classroom Learning</p>
+  </footer>
 </body>
 </html>
-
