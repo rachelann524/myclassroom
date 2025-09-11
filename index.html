@@ -4,97 +4,163 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Science Classroom Hub</title>
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    /* General */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #a8edea, #fed6e3);
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
+      background: linear-gradient(to right, #c1dfc4, #deecf2);
       color: #333;
     }
-    header {
-      background: #004d66;
-      color: white;
-      padding: 20px;
-      text-align: center;
+
+    a {
+      color: #0077b6;
+      text-decoration: none;
     }
-    nav {
-      background: #007799;
-      padding: 10px;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: #023e8a;
+      color: white;
+      padding: 30px 20px;
       text-align: center;
+      background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      background: #0077b6;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     nav a {
       color: white;
-      text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
+      margin: 0 15px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
     }
     nav a:hover {
-      text-decoration: underline;
+      background: #00b4d8;
+      transform: scale(1.05);
     }
+
     section {
-      margin: 20px;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 900px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      padding: 25px;
+      animation: fadeIn 1s ease-in;
     }
+
     h2 {
-      color: #004d66;
+      color: #023e8a;
+      display: flex;
+      align-items: center;
     }
-    footer {
-      text-align: center;
-      background: #004d66;
-      color: white;
-      padding: 15px;
-      margin-top: 20px;
+    h2 i {
+      margin-right: 10px;
+      color: #0077b6;
     }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
     iframe {
       width: 100%;
       height: 500px;
       border: none;
       border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
-    ul li {
-      margin-bottom: 10px;
+    iframe:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      text-align: center;
+      background: #023e8a;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+
+    /* Responsive adjustments */
+    @media(max-width:600px){
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 8px 0;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>🔬 Welcome to Our Science Hub</h1>
-    <p>Learning, Exploring, and Sharing Ideas</p>
+    <h1><i class="fas fa-flask"></i> Science Classroom Hub</h1>
+    <p>Engage. Explore. Experiment.</p>
   </header>
 
   <nav>
-    <a href="#bellringer">Bell Ringer</a>
-    <a href="#resources">Resources</a>
-    <a href="#submit">Answer Submission</a>
+    <a href="#bellringer"><i class="fas fa-lightbulb"></i> Bell Ringer</a>
+    <a href="#resources"><i class="fas fa-book"></i> Resources</a>
+    <a href="#submit"><i class="fas fa-pencil-alt"></i> Submit Answer</a>
   </nav>
 
   <!-- Bell Ringer -->
   <section id="bellringer">
-    <h2>Bell Ringer</h2>
-    <p><strong>Question:</strong> Why do you think clean water is important for both humans and the environment?</p>
-    <p>Submit your answer below ⬇️</p>
+    <h2><i class="fas fa-lightbulb"></i> Bell Ringer</h2>
+    <p><strong>Question:</strong> Why is clean water important for humans and ecosystems?</p>
+    <p>Submit your answer in the form below ⬇️</p>
   </section>
 
   <!-- Resources -->
   <section id="resources">
-    <h2>Resources</h2>
+    <h2><i class="fas fa-book"></i> Resources</h2>
     <ul>
-      <li><a href="https://www.epa.gov" target="_blank">EPA – Environmental Protection Agency</a></li>
-      <li><a href="https://www.awwa.org" target="_blank">AWWA – American Water Works Association</a></li>
-      <li><a href="https://www.nationalgeographic.com/environment" target="_blank">National Geographic Environment</a></li>
+      <li><a href="https://www.epa.gov" target="_blank"><i class="fas fa-globe"></i> EPA – Environmental Protection Agency</a></li>
+      <li><a href="https://www.awwa.org" target="_blank"><i class="fas fa-water"></i> AWWA – American Water Works Association</a></li>
+      <li><a href="https://www.nationalgeographic.com/environment" target="_blank"><i class="fas fa-leaf"></i> National Geographic Environment</a></li>
     </ul>
   </section>
 
   <!-- Answer Submission -->
   <section id="submit">
-    <h2>Submit Your Answer</h2>
-    <p>Use the form below to submit your bell ringer and activity responses.</p>
-
-    <!-- Google Form Embed -->
+    <h2><i class="fas fa-pencil-alt"></i> Submit Your Answer</h2>
+    <p>Use the form below to submit your bell ringer or activity responses.</p>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehppNUM_IAe5OMQUjblQ56T2st8zPK9Lsggt3-2h23o15p3Q/viewform?embedded=true">
       Loading…
     </iframe>
@@ -103,6 +169,7 @@
   <footer>
     <p>© 2025 Science Hub | Created for Classroom Learning</p>
   </footer>
+
 </body>
 </html>
 
