@@ -4,173 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Science Classroom Hub</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* General Styles */
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #e0f7fa;
-      color: #333;
-    }
-
-    a {
-      color: #023e8a;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      background: #0077b6;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    nav {
-      background: #023e8a;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      font-weight: bold;
-      margin: 0 15px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: background 0.3s, transform 0.2s;
-    }
-    nav a:hover {
-      background: #00b4d8;
-      transform: scale(1.05);
-    }
-
-    section {
-      margin: 30px auto;
-      max-width: 900px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-      padding: 25px;
-      animation: fadeIn 1s ease-in;
-    }
-
-    h2 {
-      color: #023e8a;
-      display: flex;
-      align-items: center;
-    }
-    h2 i {
-      margin-right: 10px;
-      color: #0077b6;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    iframe:hover {
-      transform: scale(1.02);
-    }
-
-    footer {
-      text-align: center;
-      background: #023e8a;
-      color: white;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    /* Section Colors */
-    #bellringer { background: #caf0f8; }
-    #resources { background: #ade8f4; }
-    #submit { background: #90e0ef; }
-
-    /* Animation */
-    @keyframes fadeIn {
-      from {opacity:0; transform: translateY(20px);}
-      to {opacity:1; transform: translateY(0);}
-    }
-
-    /* Responsive adjustments */
-    @media(max-width:600px){
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        margin: 8px 0;
-      }
-    }
+    body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#e0f7fa; color:#333; }
+    a { color:#023e8a; text-decoration:none; }
+    a:hover { text-decoration: underline; }
+    header { background:#0077b6; color:white; padding:30px 20px; text-align:center; }
+    header h1 { margin:0; font-size:2.5em; }
+    header p { font-size:1.2em; margin-top:10px; }
+    nav { background:#023e8a; display:flex; justify-content:center; flex-wrap:wrap; padding:10px 0; }
+    nav a { color:white; font-weight:bold; margin:0 15px; padding:8px 12px; border-radius:8px; transition: background 0.3s, transform 0.2s; }
+    nav a:hover { background:#00b4d8; transform: scale(1.05); }
+    section { margin:30px auto; max-width:900px; border-radius:15px; box-shadow:0 8px 16px rgba(0,0,0,0.15); padding:25px; animation: fadeIn 1s ease-in; }
+    h2 { color:#023e8a; display:flex; align-items:center; }
+    h2 i { margin-right:10px; color:#0077b6; }
+    ul li { margin-bottom:10px; }
+    iframe { width:100%; height:500px; border:none; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    iframe:hover { transform: scale(1.02); }
+    footer { text-align:center; background:#023e8a; color:white; padding:20px; margin-top:40px; }
+    /* Section colors */
+    #bellringer { background:#caf0f8; }
+    #resources { background:#ade8f4; }
+    #submit { background:#90e0ef; }
+    #docs { background:#48cae4; }
+    #questions { background:#00b4d8; color:white; }
+    #collab { background:#0077b6; color:white; }
+    @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+    @media(max-width:600px){ nav { flex-direction:column; } nav a { margin:8px 0; } }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1><i class="fas fa-flask"></i> Science Classroom Hub</h1>
-    <p>Engage. Explore. Experiment.</p>
-  </header>
+<header>
+  <h1><i class="fas fa-flask"></i> Science Classroom Hub</h1>
+  <p>Engage. Explore. Experiment.</p>
+</header>
 
-  <nav>
-    <a href="#bellringer"><i class="fas fa-lightbulb"></i> Bell Ringer</a>
-    <a href="#resources"><i class="fas fa-book"></i> Resources</a>
-    <a href="#submit"><i class="fas fa-pencil-alt"></i> Submit Answer</a>
-  </nav>
+<nav>
+  <a href="#bellringer"><i class="fas fa-lightbulb"></i> Bell Ringer</a>
+  <a href="#resources"><i class="fas fa-book"></i> Resources</a>
+  <a href="#submit"><i class="fas fa-pencil-alt"></i> Submit Answer</a>
+  <a href="#docs"><i class="fas fa-file-upload"></i> Submit Documents</a>
+  <a href="#questions"><i class="fas fa-question-circle"></i> Lesson Questions</a>
+  <a href="#collab"><i class="fas fa-users"></i> Collaboration</a>
+</nav>
 
-  <!-- Bell Ringer -->
-  <section id="bellringer">
-    <h2><i class="fas fa-lightbulb"></i> Bell Ringer</h2>
-    <p><strong>Question:</strong> Why is clean water important for humans and ecosystems?</p>
-    <p>Submit your answer in the form below ⬇️</p>
-  </section>
+<!-- Bell Ringer -->
+<section id="bellringer">
+  <h2><i class="fas fa-lightbulb"></i> Bell Ringer</h2>
+  <p><strong>Question:</strong> Why is clean water important for humans and ecosystems?</p>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehppNUM_IAe5OMQUjblQ56T2st8zPK9Lsggt3-2h23o15p3Q/viewform?embedded=true">Loading…</iframe>
+</section>
 
-  <!-- Resources -->
-  <section id="resources">
-    <h2><i class="fas fa-book"></i> Resources</h2>
-    <ul>
-      <li><a href="https://www.epa.gov" target="_blank"><i class="fas fa-globe"></i> EPA – Environmental Protection Agency</a></li>
-      <li><a href="https://www.awwa.org" target="_blank"><i class="fas fa-water"></i> AWWA – American Water Works Association</a></li>
-      <li><a href="https://www.nationalgeographic.com/environment" target="_blank"><i class="fas fa-leaf"></i> National Geographic Environment</a></li>
-    </ul>
-  </section>
+<!-- Resources -->
+<section id="resources">
+  <h2><i class="fas fa-book"></i> Resources & Assignments</h2>
+  <ul>
+    <li><a href="https://www.epa.gov" target="_blank"><i class="fas fa-globe"></i> EPA Website</a></li>
+    <li><a href="https://www.awwa.org" target="_blank"><i class="fas fa-water"></i> AWWA Resources</a></li>
+    <li><a href="https://example.com/assignment1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Assignment 1 PDF</a></li>
+    <li><a href="https://example.com/presentation.pptx" target="_blank"><i class="fas fa-file-powerpoint"></i> PowerPoint Lecture</a></li>
+  </ul>
+</section>
 
-  <!-- Answer Submission -->
-  <section id="submit">
-    <h2><i class="fas fa-pencil-alt"></i> Submit Your Answer</h2>
-    <p>Use the form below to submit your bell ringer or activity responses.</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehppNUM_IAe5OMQUjblQ56T2st8zPK9Lsggt3-2h23o15p3Q/viewform?embedded=true">
-      Loading…
-    </iframe>
-  </section>
+<!-- Answer Submission -->
+<section id="submit">
+  <h2><i class="fas fa-pencil-alt"></i> Submit Your Answer</h2>
+  <p>Use the form below to submit your bell ringer or activity responses.</p>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehppNUM_IAe5OMQUjblQ56T2st8zPK9Lsggt3-2h23o15p3Q/viewform?embedded=true">Loading…</iframe>
+</section>
 
-  <footer>
-    <p>© 2025 Science Hub | Created for Classroom Learning</p>
-  </footer>
+<!-- Document Submission -->
+<section id="docs">
+  <h2><i class="fas fa-file-upload"></i> Submit Documents</h2>
+  <p>Students can upload PDFs, Google Docs, or other files directly here:</p>
+  <iframe src="https://drive.google.com/embeddedfolderview?id=16ZseUsHiMGINDPG-W0-hdQMofRTBaCBm#grid" width="100%" height="600" frameborder="0"></iframe>
+</section>
+
+<!-- Questions Following Lesson -->
+<section id="questions">
+  <h2><i class="fas fa-question-circle"></i> Questions After Lesson</h2>
+  <p>If you have questions following the lesson, submit them below:</p>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrZ54xNlTvx6QyR8RklcO_-8iuTlR95bkaBua-VNZ0gt1WiQ/viewform?embedded=true" width="640" height="375" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</section>
+
+<!-- Collaborative Space -->
+<section id="collab">
+  <h2><i class="fas fa-users"></i> Collaboration Space</h2>
+  <p>Students can collaborate and share ideas using these tools:</p>
+  <ul>
+    <li><a href="https://docs.google.com/document/d/YOUR_DOC_LINK" target="_blank" style="color:white;"><i class="fas fa-edit"></i> Shared Google Doc</a></li>
+    <li><a href="https://jamboard.google.com/" target="_blank" style="color:white;"><i class="fas fa-chalkboard"></i> Google Jamboard</a></li>
+    <li><a href="https://etherpad.org/" target="_blank" style="color:white;"><i class="fas fa-pencil-alt"></i> Etherpad Collaborative Notes</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 Science Hub | Created for Classroom Learning</p>
+</footer>
 
 </body>
 </html>
+
 
 
 
