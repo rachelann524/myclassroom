@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Science Classroom Hub</title>
+  <title>Physical and Chemical Changes - Freshman Science</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#e0f7fa; color:#333; }
+    body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f0f8ff; color:#333; }
     a { color:#023e8a; text-decoration:none; }
     a:hover { text-decoration: underline; }
     header { background:#0077b6; color:white; padding:30px 20px; text-align:center; }
@@ -23,12 +23,13 @@
     iframe { width:100%; height:500px; border:none; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
     iframe:hover { transform: scale(1.02); }
     footer { text-align:center; background:#023e8a; color:white; padding:20px; margin-top:40px; }
-    /* Section colors */
-    #bellringer { background:#caf0f8; }
-    #resources { background:#ade8f4; }
-    #linksubmit { background:#48cae4; }
-    #questions { background:#00b4d8; color:white; }
-    #collab { background:#0077b6; color:white; }
+    /* Section colors for 5E */
+    #engage { background:#caf0f8; }
+    #explore { background:#ade8f4; }
+    #explain { background:#48cae4; }
+    #elaborate { background:#00b4d8; color:white; }
+    #evaluate { background:#0077b6; color:white; }
+    #resources { background:#90e0ef; }
     @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
     @media(max-width:600px){ nav { flex-direction:column; } nav a { margin:8px 0; } }
     .doc-link { display:inline-block; margin-top:15px; padding:12px 20px; background:#90e0ef; color:#023e8a; font-weight:bold; border-radius:10px; text-decoration:none; transition: background 0.3s, transform 0.2s; }
@@ -38,57 +39,67 @@
 <body>
 
 <header>
-  <h1><i class="fas fa-flask"></i> Science Classroom Hub</h1>
-  <p>Engage. Explore. Experiment.</p>
+  <h1><i class="fas fa-flask"></i> Physical & Chemical Changes</h1>
+  <p>Freshman Science Lesson - 5E Model</p>
 </header>
 
 <nav>
-  <a href="#bellringer"><i class="fas fa-lightbulb"></i> Bell Ringer</a>
-  <a href="#resources"><i class="fas fa-book"></i> Resources</a>
-  <a href="#linksubmit"><i class="fas fa-file-upload"></i> Submit Assignment</a>
-  <a href="#questions"><i class="fas fa-question-circle"></i> Lesson Questions</a>
-  <a href="#collab"><i class="fas fa-users"></i> Collaboration</a>
+  <a href="#engage"><i class="fas fa-lightbulb"></i> Engage</a>
+  <a href="#explore"><i class="fas fa-flask"></i> Explore</a>
+  <a href="#explain"><i class="fas fa-book"></i> Explain</a>
+  <a href="#elaborate"><i class="fas fa-question-circle"></i> Elaborate</a>
+  <a href="#evaluate"><i class="fas fa-clipboard-check"></i> Evaluate</a>
+  <a href="#resources"><i class="fas fa-book-open"></i> Resources</a>
 </nav>
 
-<!-- Bell Ringer -->
-<section id="bellringer">
-  <h2><i class="fas fa-lightbulb"></i> Bell Ringer</h2>
-  <p><strong>Question:</strong> Why is clean water important for humans and ecosystems?</p>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSehppNUM_IAe5OMQUjblQ56T2st8zPK9Lsggt3-2h23o15p3Q/viewform?embedded=true">Loading…</iframe>
+<!-- Engage -->
+<section id="engage">
+  <h2><i class="fas fa-lightbulb"></i> Engage</h2>
+  <p>Watch this video and think about what you observe:</p>
+  <a href="https://www.youtube.com/watch?v=3KshzM4SxqY" target="_blank">Physical and Chemical Changes Video</a>
 </section>
 
-<!-- Resources (placeholder) -->
+<!-- Explore -->
+<section id="explore">
+  <h2><i class="fas fa-flask"></i> Explore</h2>
+  <p>Perform the following activities and submit your observations:</p>
+  <iframe src="YOUR_GOOGLE_FORM_FOR_OBSERVATIONS" width="100%" height="500"></iframe>
+</section>
+
+<!-- Explain -->
+<section id="explain">
+  <h2><i class="fas fa-book"></i> Explain</h2>
+  <p><strong>Physical Change:</strong> Changes form but not chemical composition (melting, freezing, cutting).</p>
+  <p><strong>Chemical Change:</strong> Creates new substance (rusting, burning, reacting with vinegar).</p>
+</section>
+
+<!-- Elaborate -->
+<section id="elaborate">
+  <h2><i class="fas fa-question-circle"></i> Elaborate</h2>
+  <p>Classify these real-life changes by submitting your answers:</p>
+  <iframe src="YOUR_GOOGLE_FORM_FOR_ELABORATE" width="100%" height="500"></iframe>
+</section>
+
+<!-- Evaluate -->
+<section id="evaluate">
+  <h2><i class="fas fa-clipboard-check"></i> Evaluate</h2>
+  <p>Submit your answers to check your understanding:</p>
+  <iframe src="YOUR_GOOGLE_FORM_FOR_EVALUATE" width="100%" height="500"></iframe>
+</section>
+
+<!-- Resources -->
 <section id="resources">
-  <h2><i class="fas fa-book"></i> Resources & Assignments</h2>
-  <p>Links and assignments will be added here.</p>
-</section>
-
-<!-- Assignment Link Submission -->
-<section id="linksubmit">
-  <h2><i class="fas fa-file-upload"></i> Submit Your Assignment</h2>
-  <p>Paste the link to your assignment below:</p>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSerq94RBP0mVNQDpNpxTLulBRp715Ye974HYKzfyRtaEM0cVQ/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</section>
-
-<!-- Questions After Lesson -->
-<section id="questions">
-  <h2><i class="fas fa-question-circle"></i> Questions After Lesson</h2>
-  <p>If you have questions following the lesson, submit them below:</p>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrZ54xNlTvx6QyR8RklcO_-8iuTlR95bkaBua-VNZ0gt1WiQ/viewform?embedded=true" width="100%" height="500"></iframe>
-</section>
-
-<!-- Collaboration Space -->
-<section id="collab">
-  <h2><i class="fas fa-users"></i> Collaboration Space</h2>
-  <p>Click the link below to collaborate with your classmates in real-time:</p>
-  <a href="https://docs.google.com/document/d/1_omvGg-SrCqKbnuldXXccrG87w_oHA9tG8QhSOL1x1w/edit?usp=sharing" target="_blank" class="doc-link">Open Shared Google Doc</a>
+  <h2><i class="fas fa-book-open"></i> Resources</h2>
+  <ul>
+    <li><a href="https://www.khanacademy.org/science/chemistry/chemical-reactions" target="_blank">Khan Academy: Chemical Reactions</a></li>
+    <li><a href="https://www.ck12.org/physical-science/physical-and-chemical-changes/" target="_blank">CK-12: Physical and Chemical Changes</a></li>
+    <li><a href="https://phet.colorado.edu/en/simulation/states-of-matter-basics" target="_blank">PhET Simulation: States of Matter</a></li>
+  </ul>
 </section>
 
 <footer>
-  <p>© 2025 Science Hub | Created for Classroom Learning</p>
+  <p>© 2025 Science Hub | Created for Freshman Science Learning</p>
 </footer>
 
 </body>
 </html>
-
-
