@@ -41,12 +41,12 @@
       margin-top: 0;
       color: #2e8b57;
     }
-    img.map {
-      display: block;
-      margin: 1rem auto;
-      max-width: 100%;
+    iframe {
+      width: 100%;
+      height: 750px;
+      border: none;
       border-radius: 8px;
-      border: 1px solid #ddd;
+      margin-top: 1rem;
     }
     footer {
       text-align: center;
@@ -55,13 +55,6 @@
       color: white;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
-    }
-    iframe {
-      width: 100%;
-      height: 750px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 1rem;
     }
     a.button {
       display: inline-block;
@@ -95,7 +88,6 @@
       Example: Birmingham ≈ 33.5°N, 86.8°W.</p>
       <p><b>Relative Location:</b> where a place is compared to others.<br>
       Example: Birmingham is north of Montgomery.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Alabama_county_map.png/800px-Alabama_county_map.png" alt="Alabama Counties Map" class="map">
       <p><b>Learn More:</b></p>
       <ul class="resources">
         <li><a href="https://alabamamaps.ua.edu/" target="_blank">University of Alabama Maps Collection</a></li>
@@ -104,15 +96,22 @@
     </section>
 
     <section>
-      <h2>🏞️ Place</h2>
-      <p><b>Physical Features:</b> rivers, mountains, climate, soil.<br>
-      <b>Human Features:</b> cities, roads, buildings, culture.</p>
-      <p>Example: Gulf Coast beaches vs. Appalachian foothills in the north.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Alabama_topographic_map.png" alt="Alabama Topographic Map" class="map">
+      <h2>🏞️ Place – Physical Features</h2>
+      <p><b>Explore Alabama's physical geography:</b> elevation, relief, rivers, and physiographic regions.</p>
+      <iframe src="https://alabamamaps.ua.edu/contemporarymaps/alabama/physical/index.html"></iframe>
       <p><b>Learn More:</b></p>
       <ul class="resources">
-        <li><a href="https://encyclopediaofalabama.org/article/alabamas-physiographic-sections/" target="_blank">Alabama’s Physiographic Regions</a></li>
-        <li><a href="https://encyclopediaofalabama.org/article/alabama-cities/" target="_blank">Overview of Alabama Cities</a></li>
+        <li><a href="https://alabamamaps.ua.edu/contemporarymaps/alabama/physical/index.html" target="_blank">UA Physical Maps Collection</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🗳️ Place – Political Features</h2>
+      <p><b>Explore Alabama's political geography:</b> voting patterns, districts, and legislation.</p>
+      <iframe src="https://alabamamaps.ua.edu/contemporarymaps/alabama/politics/index.html"></iframe>
+      <p><b>Learn More:</b></p>
+      <ul class="resources">
+        <li><a href="https://alabamamaps.ua.edu/contemporarymaps/alabama/politics/index.html" target="_blank">UA Political Maps Collection</a></li>
       </ul>
     </section>
 
@@ -124,7 +123,6 @@
         <li>Building dams for power</li>
         <li>Using rivers for cities & transport</li>
       </ul>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Alabama_rivers.png/640px-Alabama_rivers.png" alt="Alabama Rivers Map" class="map">
       <p><b>Learn More:</b></p>
       <ul class="resources">
         <li><a href="https://encyclopediaofalabama.org/article/black-belt-region/" target="_blank">Alabama Black Belt</a></li>
@@ -140,7 +138,6 @@
         <li>Mobile port for trade</li>
         <li>Migration from rural counties to cities</li>
       </ul>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Interstate_Highways_map_of_Alabama.png" alt="Alabama Highways Map" class="map">
       <p><b>Learn More:</b></p>
       <ul class="resources">
         <li><a href="https://mapgoose.com/us/alabama#main-map" target="_blank">Interactive Alabama Highway Map</a></li>
@@ -156,7 +153,6 @@
         <li><b>Gulf Coast:</b> tourism, seafood, trade</li>
         <li><b>North Alabama:</b> mountains, industry</li>
       </ul>
-      <img src="https://encyclopediaofalabama.org/wp-content/uploads/2022/08/BlackBeltMapLarge.jpg" alt="Black Belt Region Map" class="map">
       <p><b>Learn More:</b></p>
       <ul class="resources">
         <li><a href="https://encyclopediaofalabama.org/article/black-belt-region/" target="_blank">The Black Belt Region</a></li>
@@ -177,6 +173,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
