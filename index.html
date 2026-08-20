@@ -4,481 +4,347 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Miss Rachel's Board</title>
+<title>Miss Rachel's STAR Board</title>
 
 <style>
 
-:root {
-    --pink:#e88ca8;
-    --darkpink:#c85f82;
-    --lightpink:#fff0f5;
-    --purple:#a98bc9;
-    --lavender:#f4edfb;
-    --green:#91bd9e;
-    --yellow:#f5d58b;
-    --blue:#8bb8d9;
-    --orange:#efa56f;
-    --red:#d97979;
-    --text:#4b3540;
-    --white:#ffffff;
-}
-
 * {
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body {
-    margin:0;
-    font-family:"Trebuchet MS",Arial,sans-serif;
-    background:linear-gradient(135deg,#fff0f6,#f7f0fc);
-    color:var(--text);
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #f4efff);
+    color: #513c48;
 }
 
-/* HEADER */
-
 header {
-    background:linear-gradient(135deg,#e88ca8,#d87599);
-    color:white;
-    text-align:center;
-    padding:22px;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    background: linear-gradient(135deg, #e88ca8, #c85f82);
+    color: white;
+    text-align: center;
+    padding: 22px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
 }
 
 header h1 {
-    margin:0;
-    font-size:3rem;
+    margin: 5px;
+    font-size: 3.2rem;
 }
 
 header p {
-    margin:5px;
-    font-size:1.25rem;
+    font-size: 1.2rem;
+    margin: 5px;
 }
-
-.header-stars {
-    font-size:2rem;
-}
-
-/* MAIN */
 
 .container {
-    max-width:1500px;
-    margin:auto;
-    padding:18px;
+    max-width: 1500px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* DATE */
-
-.date-bar {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:white;
-    border-radius:20px;
-    padding:15px 25px;
-    margin-bottom:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-.date {
-    font-size:1.5rem;
-    font-weight:bold;
-    color:var(--darkpink);
-}
-
-.greeting {
-    font-size:1.35rem;
-}
-
-/* TEACHER BUTTON */
-
-.teacher-button {
-    text-align:right;
-    margin-bottom:10px;
-}
-
-/* TEACHER PANEL */
-
-.teacher-panel {
-    display:none;
-    background:white;
-    border:3px solid var(--purple);
-    border-radius:22px;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.teacher-panel h2 {
-    color:var(--purple);
-}
-
-.teacher-note {
-    background:var(--lavender);
-    padding:15px;
-    border-radius:15px;
-}
-
-.editor-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-textarea,
-input,
-select {
-    width:100%;
-    padding:12px;
-    border:2px solid #ead5df;
-    border-radius:12px;
-    font-family:inherit;
-    font-size:1rem;
-    margin:6px 0;
-}
-
-textarea {
-    min-height:120px;
-}
-
-/* MAIN GRID */
-
-.main-grid {
-    display:grid;
-    grid-template-columns:1.25fr 1fr 1fr;
-    gap:18px;
+.datebar {
+    background: white;
+    border-radius: 20px;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    font-weight: bold;
 }
 
 .card {
-    background:white;
-    border-radius:22px;
-    padding:20px;
-    box-shadow:0 5px 15px rgba(100,70,90,.12);
-    border:2px solid #f6dce6;
+    background: white;
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(100,70,90,.12);
+    border: 2px solid #f4d9e4;
+    margin-bottom: 18px;
 }
 
 .card h2 {
-    margin-top:0;
-    color:var(--darkpink);
-    font-size:1.55rem;
+    color: #c85f82;
+    margin-top: 0;
 }
 
-/* OBJECTIVES */
-
-.objectives {
-    grid-row:span 2;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
-.objective {
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    background:#fff7fa;
-    border-radius:15px;
-    padding:15px;
-    margin:10px 0;
-    font-size:1.2rem;
+.two-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
-.objective-number {
-    background:var(--pink);
-    color:white;
-    min-width:34px;
-    height:34px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
+.choice-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
 }
-
-/* STAR */
-
-.star-card {
-    background:linear-gradient(135deg,#fff8df,#fff1f5);
-    border:3px solid var(--yellow);
-}
-
-.star-focus {
-    text-align:center;
-    font-size:1.25rem;
-    padding:10px;
-}
-
-.star-letter {
-    font-size:4rem;
-    color:var(--darkpink);
-    font-weight:bold;
-}
-
-/* SCHEDULE */
-
-.schedule-item {
-    display:flex;
-    align-items:center;
-    gap:12px;
-    background:#fff7fa;
-    padding:12px;
-    margin:7px 0;
-    border-radius:12px;
-    font-size:1.1rem;
-}
-
-.empty-message {
-    text-align:center;
-    padding:25px;
-    color:#9b7b88;
-    font-style:italic;
-    font-size:1.05rem;
-}
-
-/* LUNCH */
-
-.lunch-option {
-    background:#fff8e8;
-    border-radius:15px;
-    padding:15px;
-    margin:8px 0;
-    font-size:1.15rem;
-}
-
-/* WEATHER */
-
-.weather {
-    text-align:center;
-}
-
-.weather-icon {
-    font-size:4rem;
-}
-
-.temperature {
-    font-size:2.8rem;
-    font-weight:bold;
-    color:var(--darkpink);
-}
-
-/* MESSAGE */
-
-.daily-message {
-    background:#f4edfb;
-    border-left:7px solid var(--purple);
-    border-radius:15px;
-    padding:18px;
-    font-size:1.2rem;
-    line-height:1.5;
-}
-
-/* CURRENT EVENTS */
-
-.current-event {
-    background:linear-gradient(135deg,#eef7ff,#f5edff);
-    border-left:7px solid var(--blue);
-}
-
-.event-topic {
-    background:#fff7fa;
-    border-radius:15px;
-    padding:15px;
-    margin-top:12px;
-    font-size:1.15rem;
-    text-align:center;
-    font-weight:bold;
-}
-
-.event-buttons {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    margin-top:12px;
-}
-
-/* FUN SECTION */
-
-.fun-section {
-    margin-top:18px;
-}
-
-.fun-grid {
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.fun-card {
-    border-radius:20px;
-    padding:20px;
-    text-align:center;
-    min-height:225px;
-}
-
-.fun-card h3 {
-    margin:8px 0;
-    font-size:1.4rem;
-}
-
-.fun-icon {
-    font-size:3.2rem;
-}
-
-.cleaning {
-    background:#eef8f0;
-}
-
-.sports {
-    background:#edf6fc;
-}
-
-.unicorn {
-    background:#f5edff;
-}
-
-.coloring {
-    background:#fff0f7;
-}
-
-.fun-result {
-    font-weight:bold;
-    min-height:50px;
-}
-
-/* BRAIN BREAK */
-
-.brain-break {
-    background:#fff8e5;
-    text-align:center;
-    border-radius:18px;
-    padding:22px;
-    font-size:1.3rem;
-    min-height:90px;
-}
-
-/* TIMER */
-
-.timer {
-    text-align:center;
-}
-
-.timer-display {
-    font-size:3.5rem;
-    font-weight:bold;
-    color:var(--darkpink);
-    background:var(--lightpink);
-    border-radius:15px;
-    padding:10px;
-}
-
-/* QUESTION */
-
-.question {
-    text-align:center;
-    font-size:1.35rem;
-    background:#fff8e5;
-    padding:20px;
-    border-radius:18px;
-}
-
-/* BUTTONS */
 
 button {
-    border:none;
-    border-radius:14px;
-    padding:12px 18px;
-    margin:4px;
-    font-family:inherit;
-    font-size:1rem;
-    font-weight:bold;
-    cursor:pointer;
-    background:var(--pink);
-    color:white;
-    transition:.2s;
+    border: none;
+    border-radius: 16px;
+    padding: 15px 20px;
+    margin: 5px;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+    color: white;
 }
 
 button:hover {
-    transform:translateY(-2px);
-    box-shadow:0 3px 8px rgba(0,0,0,.12);
+    transform: scale(1.05);
 }
 
-button:focus {
-    outline:3px solid var(--yellow);
+button:active {
+    transform: scale(.95);
+}
+
+.pink {
+    background: #e88ca8;
 }
 
 .purple {
-    background:var(--purple);
-}
-
-.green {
-    background:var(--green);
-}
-
-.yellow {
-    background:var(--yellow);
-    color:#604c23;
+    background: #a98bc9;
 }
 
 .blue {
-    background:var(--blue);
+    background: #8bb8d9;
+}
+
+.green {
+    background: #91bd9e;
+}
+
+.yellow {
+    background: #f2cf72;
+    color: #604c23;
 }
 
 .orange {
-    background:var(--orange);
+    background: #efa56f;
 }
 
 .red {
-    background:var(--red);
+    background: #d97979;
 }
 
-.secondary {
-    background:var(--lightpink);
-    color:var(--darkpink);
+.choice {
+    background: #fff6fa;
+    border: 2px solid #efd8e2;
+    border-radius: 20px;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: .25s;
 }
 
-/* FOOTER */
+.choice:hover {
+    transform: scale(1.06);
+    background: #ffe9f1;
+}
+
+.choice.selected {
+    box-shadow: 0 0 0 5px #ffd45c;
+    transform: scale(1.06);
+}
+
+.big-emoji {
+    display: block;
+    font-size: 3.5rem;
+    margin-bottom: 8px;
+}
+
+.result {
+    background: #fff5f9;
+    border-radius: 18px;
+    padding: 20px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    min-height: 70px;
+}
+
+.objective {
+    background: #fff6fa;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.15rem;
+}
+
+.objective span {
+    display: inline-flex;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #e88ca8;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.empty {
+    text-align: center;
+    color: #9d7f8b;
+    padding: 20px;
+    font-style: italic;
+}
+
+.weather {
+    text-align: center;
+}
+
+.weather-icon {
+    font-size: 4rem;
+}
+
+.temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c85f82;
+}
+
+.timer {
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #c85f82;
+    background: #fff0f5;
+    border-radius: 18px;
+    padding: 10px;
+}
+
+.big-result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    min-height: 100px;
+}
+
+.teacher-panel {
+    display: none;
+    background: white;
+    border: 3px solid #a98bc9;
+    border-radius: 22px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.teacher-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    border: 2px solid #e6cdd8;
+    border-radius: 12px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #e6cdd8;
+    font-size: 1rem;
+}
+
+.points {
+    font-size: 4rem;
+    color: #c85f82;
+    font-weight: bold;
+    text-align: center;
+}
+
+.badge {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.celebrate {
+    position: fixed;
+    inset: 0;
+    background: rgba(232,140,168,.95);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.celebrate-content {
+    font-size: 2rem;
+}
+
+.celebrate-content .emoji {
+    font-size: 7rem;
+}
+
+.confetti {
+    position: absolute;
+    font-size: 2rem;
+    animation: fall 2s linear forwards;
+}
+
+@keyframes fall {
+
+    from {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
 
 footer {
-    margin-top:20px;
-    padding:20px;
-    text-align:center;
-    background:#d87599;
-    color:white;
+    background: #c85f82;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-/* RESPONSIVE */
+@media(max-width: 900px) {
 
-@media(max-width:1100px) {
-
-    .main-grid {
-        grid-template-columns:1fr 1fr;
+    .grid,
+    .two-grid,
+    .teacher-grid {
+        grid-template-columns: 1fr;
     }
 
-    .objectives {
-        grid-row:auto;
+    .choice-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .fun-grid {
-        grid-template-columns:1fr 1fr;
-    }
-
-}
-
-@media(max-width:700px) {
-
-    header h1 {
-        font-size:2rem;
-    }
-
-    .main-grid,
-    .fun-grid,
-    .editor-grid {
-        grid-template-columns:1fr;
-    }
-
-    .date-bar {
-        flex-direction:column;
-        text-align:center;
-        gap:8px;
+    .datebar {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
     }
 
 }
@@ -493,7 +359,7 @@ footer {
 
 <header>
 
-<div class="header-stars">
+<div style="font-size:2rem;">
 ⭐ 🌸 ⭐
 </div>
 
@@ -502,116 +368,84 @@ Miss Rachel's STAR Board
 </h1>
 
 <p>
-Learn • Grow • Shine
+Learn • Grow • Shine!
 </p>
 
 </header>
 
 
-<main class="container">
+<div class="container">
 
 
-<!-- DATE -->
+<div class="datebar">
 
-<div class="date-bar">
+<div id="date"></div>
 
-<div
-id="date"
-class="date">
-</div>
-
-<div
-id="greeting"
-class="greeting">
-</div>
+<div id="greeting"></div>
 
 </div>
 
 
-<!-- TEACHER BUTTON -->
-
-<div class="teacher-button">
+<div style="text-align:right;">
 
 <button
 class="purple"
-onclick="toggleTeacherMode()">
+onclick="toggleTeacher()">
 
-👩‍🏫 Teacher Edit Mode
+👩‍🏫 Teacher Mode
 
 </button>
 
 </div>
 
 
-<!-- TEACHER PANEL -->
+<!-- TEACHER MODE -->
 
 <section
 id="teacherPanel"
 class="teacher-panel">
 
 <h2>
-👩‍🏫 Miss Rachel's Teacher Controls
+👩‍🏫 Update Today's STAR Board
 </h2>
 
-<p class="teacher-note">
-
-Use these boxes to update the board for today.
-Your information is saved on this computer.
-Students will only see the finished classroom board.
-
-</p>
-
-<div class="editor-grid">
-
-
-<!-- OBJECTIVES -->
+<div class="teacher-grid">
 
 <div>
 
-<h3>
-🎯 Today's Learning Objectives
-</h3>
+<h3>🎯 Objectives</h3>
 
 <textarea
-id="objectiveInput"
-placeholder="Enter one objective per line.
-
-Example:
-I can identify three types of clouds.
-I can explain how clouds form.
-I can work with my classmates.">
+id="objectivesInput"
+placeholder="Enter one objective per line">
 </textarea>
 
 </div>
 
 
-<!-- STAR -->
-
 <div>
 
-<h3>
-⭐ Today's STAR Focus
-</h3>
+<h3>⭐ STAR Focus</h3>
 
 <select id="starInput">
 
 <option value="">
-Choose a STAR focus
+Choose STAR focus
 </option>
 
-<option value="S — Safe">
+<option>
 S — Safe
 </option>
 
-<option value="T — Try Your Best">
+<option>
 T — Try Your Best
 </option>
 
-<option value="A — Act Responsibly">
+<option>
 A — Act Responsibly
 </option>
 
-<option value="R — Respect Others">
+<option>
 R — Respect Others
 </option>
 
@@ -619,97 +453,55 @@ R — Respect Others
 
 <textarea
 id="starMessageInput"
-placeholder="Optional message for the STAR focus">
+placeholder="STAR message">
 </textarea>
 
 </div>
 
 
-<!-- SCHEDULE -->
-
 <div>
 
-<h3>
-📅 Today's Schedule
-</h3>
+<h3>📅 Schedule</h3>
 
 <textarea
 id="scheduleInput"
-placeholder="Leave blank until you are ready.
-
-Example:
-8:00 — Morning Meeting
-8:15 — Reading
-9:00 — Math
-10:00 — Science
-11:30 — Lunch
-12:00 — Recess
-1:00 — STAR Activities">
+placeholder="Enter today's schedule">
 </textarea>
 
 </div>
 
 
-<!-- LUNCH -->
-
 <div>
 
-<h3>
-🍎 Today's Lunch
-</h3>
+<h3>🍎 Lunch</h3>
 
 <textarea
 id="lunchInput"
-placeholder="Leave blank until you are ready.
-
-Example:
-Pizza
-Chicken Sandwich
-PB&J
-Salad
-Fruit">
+placeholder="Enter today's lunch options">
 </textarea>
 
 </div>
 
 
-<!-- DAILY MESSAGE -->
-
 <div>
 
-<h3>
-💬 Daily Message
-</h3>
+<h3>💬 Miss Rachel's Message</h3>
 
 <textarea
 id="messageInput"
-placeholder="Example:
-Today is going to be a great day!
-Remember to be kind and try your best.">
+placeholder="Enter today's message">
 </textarea>
 
 </div>
 
 
-<!-- CURRENT EVENT -->
-
 <div>
 
-<h3>
-📰✨ Fun Current Event
-</h3>
+<h3>📰 Current Event</h3>
 
 <textarea
-id="currentEventInput"
-placeholder="Enter a fun current event for today's class.
-
-Example:
-Scientists recently discovered something
-interesting about space...
-
-What happened?
-Why is it interesting?
-What can we learn?">
+id="eventInput"
+placeholder="Enter today's current event">
 </textarea>
 
 </div>
@@ -719,91 +511,128 @@ What can we learn?">
 
 <button
 class="green"
-onclick="saveTeacherSettings()">
+onclick="saveBoard()">
 
-💾 Save Today's Board
+💾 Save Board
 
 </button>
 
 <button
-class="secondary"
-onclick="closeTeacherMode()">
+class="red"
+onclick="toggleTeacher()">
 
-Close Teacher Mode
+Close
 
 </button>
 
 </section>
 
 
-<!-- MAIN BOARD -->
-
-<div class="main-grid">
-
-
 <!-- OBJECTIVES -->
 
-<section class="card objectives">
+<section class="card">
 
 <h2>
 🎯 Today's Learning Objectives
 </h2>
 
-<div id="objectives">
-</div>
+<div id="objectives"></div>
+
+<div style="text-align:center;">
 
 <button
-class="purple"
-onclick="readObjectives()">
+class="green"
+onclick="objectiveCheck('ready')">
 
-🔊 Read Objectives
+⭐ I CAN DO IT!
 
 </button>
+
+<button
+class="yellow"
+onclick="objectiveCheck('help')">
+
+🙋 I NEED HELP
+
+</button>
+
+</div>
+
+<div
+id="objectiveResult"
+class="result">
+
+How are we feeling about today's learning?
+
+</div>
 
 </section>
 
 
 <!-- STAR -->
 
-<section class="card star-card">
+<section class="card">
 
 <h2>
 ⭐ Our STAR Focus
 </h2>
 
-<div class="star-focus">
-
 <div
-id="starLetter"
-class="star-letter">
+id="starFocus"
+class="result">
 
-⭐
+Let's be STAR students today!
 
 </div>
 
-<h3 id="starFocus">
+<div style="text-align:center;">
 
-Let's be STAR students!
+<button
+class="pink"
+onclick="starChoice('S')">
 
-</h3>
+S — SAFE
 
-<p id="starMessage">
+</button>
 
-Safe • Try Your Best • Act Responsibly • Respect Others
+<button
+class="purple"
+onclick="starChoice('T')">
 
-</p>
+T — TRY
+
+</button>
+
+<button
+class="blue"
+onclick="starChoice('A')">
+
+A — RESPONSIBLE
+
+</button>
+
+<button
+class="green"
+onclick="starChoice('R')">
+
+R — RESPECT
+
+</button>
 
 </div>
 
 </section>
 
 
-<!-- WEATHER -->
+<!-- WEATHER / SCHEDULE / LUNCH -->
+
+<div class="grid">
+
 
 <section class="card weather">
 
 <h2>
-🌤️ Today's Weather
+🌤️ Weather
 </h2>
 
 <div
@@ -822,14 +651,12 @@ class="temperature">
 
 </div>
 
-<p
-id="weatherDescription">
-
+<p id="weatherDescription">
 Getting weather...
-
 </p>
 
 <button
+class="blue"
 onclick="getWeather()">
 
 🔄 Update
@@ -839,21 +666,16 @@ onclick="getWeather()">
 </section>
 
 
-<!-- SCHEDULE -->
-
 <section class="card">
 
 <h2>
 📅 Today's Schedule
 </h2>
 
-<div id="schedule">
-</div>
+<div id="schedule"></div>
 
 </section>
 
-
-<!-- LUNCH -->
 
 <section class="card">
 
@@ -861,70 +683,186 @@ onclick="getWeather()">
 🍎 Today's Lunch
 </h2>
 
-<div id="lunch">
-</div>
+<div id="lunch"></div>
 
 </section>
 
 
-<!-- DAILY MESSAGE -->
+</div>
+
+
+<!-- FEELINGS -->
 
 <section class="card">
 
 <h2>
-💬 Miss Rachel's Message
+😊 How Are We Feeling?
 </h2>
 
-<div
-id="dailyMessage"
-class="daily-message">
+<p>
+Choose one together!
+</p>
 
-Welcome to class!
-Let's have a great day!
+<div class="choice-grid">
+
+<div
+class="choice"
+onclick="feeling(this,'Happy 😊')">
+
+<span class="big-emoji">😊</span>
+Happy
 
 </div>
 
-<button
-class="purple"
-onclick="readElement('dailyMessage')">
+<div
+class="choice"
+onclick="feeling(this,'Calm 😌')">
 
-🔊 Read Message
+<span class="big-emoji">😌</span>
+Calm
 
-</button>
+</div>
+
+<div
+class="choice"
+onclick="feeling(this,'Tired 😴')">
+
+<span class="big-emoji">😴</span>
+Tired
+
+</div>
+
+<div
+class="choice"
+onclick="feeling(this,'Worried 😟')">
+
+<span class="big-emoji">😟</span>
+Worried
+
+</div>
+
+</div>
+
+<div
+id="feelingResult"
+class="result">
+
+Pick a feeling!
+
+</div>
 
 </section>
 
 
-<!-- CURRENT EVENT -->
+<!-- CURRENT EVENTS -->
 
 <section class="card">
 
 <h2>
-📰✨ Fun Current Event
+📰✨ Fun Current Events
 </h2>
 
 <div
 id="currentEvent"
-class="daily-message current-event">
+class="result">
 
-Today's fun current event
-will appear here!
+Choose a topic!
 
 </div>
 
-<div class="event-buttons">
+<div class="choice-grid">
+
+<div
+class="choice"
+onclick="eventTopic('space')">
+
+<span class="big-emoji">🚀</span>
+Space
+
+</div>
+
+<div
+class="choice"
+onclick="eventTopic('sports')">
+
+<span class="big-emoji">🏀</span>
+Sports
+
+</div>
+
+<div
+class="choice"
+onclick="eventTopic('animals')">
+
+<span class="big-emoji">🐾</span>
+Animals
+
+</div>
+
+<div
+class="choice"
+onclick="eventTopic('science')">
+
+<span class="big-emoji">🔬</span>
+Science
+
+</div>
+
+</div>
+
+<div class="choice-grid">
+
+<div
+class="choice"
+onclick="eventTopic('earth')">
+
+<span class="big-emoji">🌎</span>
+Earth
+
+</div>
+
+<div
+class="choice"
+onclick="eventTopic('technology')">
+
+<span class="big-emoji">🤖</span>
+Technology
+
+</div>
+
+<div
+class="choice"
+onclick="eventTopic('ocean')">
+
+<span class="big-emoji">🌊</span>
+Oceans
+
+</div>
+
+<div
+class="choice"
+onclick="eventTopic('positive')">
+
+<span class="big-emoji">🎉</span>
+Good News
+
+</div>
+
+</div>
+
+<div style="text-align:center;">
 
 <button
-class="blue"
-onclick="newEventTopic()">
+class="purple"
+onclick="randomEvent()">
 
-🎲 Pick a Topic
+🎲 Surprise Topic
 
 </button>
 
 <button
-class="purple"
-onclick="readElement('currentEvent')">
+class="blue"
+onclick="readText('currentEvent')">
 
 🔊 Read It
 
@@ -932,172 +870,243 @@ onclick="readElement('currentEvent')">
 
 </div>
 
-<div
-id="eventTopic"
-class="event-topic">
+</section>
 
-Choose a topic to discuss!
+
+<!-- CLASS POINTS -->
+
+<section class="card">
+
+<h2>
+⭐ Class STAR Points
+</h2>
+
+<div
+id="points"
+class="points">
+
+0
+
+</div>
+
+<p style="text-align:center;">
+Every time the class demonstrates STAR behavior, add a point!
+</p>
+
+<div style="text-align:center;">
+
+<button
+class="green"
+onclick="addPoint()">
+
+⭐ +1 STAR
+
+</button>
+
+<button
+class="yellow"
+onclick="addFivePoints()">
+
+🌟 +5 STARS
+
+</button>
+
+<button
+class="red"
+onclick="resetPoints()">
+
+Reset
+
+</button>
 
 </div>
 
 </section>
 
 
-</div>
-
-
-<!-- FUN CLASSROOM ACTIVITIES -->
-
-<section class="card fun-section">
-
-<h2>
-🌈 Let's Have Some Fun!
-</h2>
-
-<div class="fun-grid">
-
-
 <!-- CLEANING -->
 
-<div class="fun-card cleaning">
+<section class="card">
 
-<div class="fun-icon">
-🧹
+<h2>
+🧹 Cleaning Challenge
+</h2>
+
+div id="cleaningResult"
+class="big-result">
+
+Let's make our classroom shine!
+
 </div>
 
-<h3>
-Cleaning Challenge
-</h3>
-
-<p id="cleaningResult">
-
-Let's help make our classroom shine!
-
-</p>
+<div style="text-align:center;">
 
 <button
 class="green"
-onclick="newCleaningJob()">
+onclick="cleaningChallenge()">
 
 🎲 Pick a Job
 
 </button>
 
 <button
-onclick="completeCleaning()">
+class="yellow"
+onclick="cleaningDone()">
 
-⭐ Done!
-
-</button>
-
-</div>
-
-
-<!-- SPORTS -->
-
-<div class="fun-card sports">
-
-<div class="fun-icon">
-🏀
-</div>
-
-<h3>
-Sports Challenge
-</h3>
-
-<p id="sportsResult">
-
-Ready for a sports question?
-
-</p>
-
-<button
-class="blue"
-onclick="newSportsChallenge()">
-
-🏆 Pick One
+⭐ DONE!
 
 </button>
-
-</div>
-
-
-<!-- UNICORN -->
-
-<div class="fun-card unicorn">
-
-<div class="fun-icon">
-🦄
-</div>
-
-<h3>
-Unicorn Surprise
-</h3>
-
-<p id="unicornResult">
-
-Click for today's magical message!
-
-</p>
-
-<button
-class="purple"
-onclick="newUnicornMessage()">
-
-🦄 Magic!
-
-</button>
-
-</div>
-
-
-<!-- COLOR -->
-
-<div class="fun-card coloring">
-
-<div class="fun-icon">
-🎨
-</div>
-
-<h3>
-Color of the Day
-</h3>
-
-<div
-id="colorDisplay"
-style="font-size:4rem;margin:10px;">
-
-🎨
-
-</div>
-
-<p id="colorName">
-
-What color will we choose?
-
-</p>
-
-<button
-onclick="newColor()">
-
-🌈 Pick a Color
-
-</button>
-
-</div>
-
 
 </div>
 
 </section>
 
 
-<!-- BRAIN BREAK + TIMER -->
+<!-- SPORTS / UNICORN -->
+
+<div class="two-grid">
+
+
+<section class="card">
+
+<h2>
+🏀 Sports Challenge
+</h2>
 
 <div
-class="main-grid"
-style="margin-top:18px;">
+id="sportsResult"
+class="big-result">
 
+Ready?
+
+</div>
+
+<div style="text-align:center;">
+
+<button
+class="blue"
+onclick="sportsChallenge()">
+
+🏆 Pick a Challenge
+
+</button>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>
+🦄 Unicorn Surprise
+</h2>
+
+<div
+id="unicornResult"
+class="big-result">
+
+Click for some magic!
+
+</div>
+
+<div style="text-align:center;">
+
+<button
+class="purple"
+onclick="unicorn()">
+
+🦄 MAGIC!
+
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<!-- KINDNESS -->
+
+<section class="card">
+
+<h2>
+💗 Kindness Challenge
+</h2>
+
+<div
+id="kindnessResult"
+class="big-result">
+
+Let's spread some kindness!
+
+</div>
+
+<div style="text-align:center;">
+
+<button
+class="pink"
+onclick="kindnessChallenge()">
+
+💗 Give Us a Challenge!
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- WOULD YOU RATHER -->
+
+<section class="card">
+
+<h2>
+🤔 Would You Rather?
+</h2>
+
+<div
+id="ratherQuestion"
+class="result">
+
+Let's see today's question!
+
+</div>
+
+<div style="text-align:center;">
+
+<button
+class="pink"
+onclick="ratherA()">
+
+A
+
+</button>
+
+<button
+class="purple"
+onclick="ratherB()">
+
+B
+
+</button>
+
+<button
+class="blue"
+onclick="newRather()">
+
+🎲 New Question
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- BRAIN BREAK -->
 
 <section class="card">
 
@@ -1106,8 +1115,8 @@ style="margin-top:18px;">
 </h2>
 
 <div
-id="brainBreak"
-class="brain-break">
+id="brainResult"
+class="big-result">
 
 Ready for a brain break?
 
@@ -1117,14 +1126,15 @@ Ready for a brain break?
 
 <button
 class="purple"
-onclick="newBrainBreak()">
+onclick="brainBreak()">
 
-🎲 Choose a Break
+🎲 Pick One
 
 </button>
 
 <button
-onclick="readElement('brainBreak')">
+class="blue"
+onclick="readText('brainResult')">
 
 🔊 Read It
 
@@ -1135,10 +1145,141 @@ onclick="readElement('brainBreak')">
 </section>
 
 
+<!-- SENSORY BREAK -->
+
+<section class="card">
+
+<h2>
+🌸 What Does Your Brain Need?
+</h2>
+
+<div class="choice-grid">
+
+<div
+class="choice"
+onclick="sensory('quiet')">
+
+<span class="big-emoji">🤫</span>
+Quiet
+
+</div>
+
+<div
+class="choice"
+onclick="sensory('movement')">
+
+<span class="big-emoji">🚶</span>
+Movement
+
+</div>
+
+<div
+class="choice"
+onclick="sensory('water')">
+
+<span class="big-emoji">💧</span>
+Water
+
+</div>
+
+<div
+class="choice"
+onclick="sensory('breathing')">
+
+<span class="big-emoji">🌬️</span>
+Breathe
+
+</div>
+
+</div>
+
+<div
+id="sensoryResult"
+class="result">
+
+Everyone's brain needs different things. 💗
+
+</div>
+
+</section>
+
+
+<!-- COLOR -->
+
+<section class="card">
+
+<h2>
+🎨 Color of the Day
+</h2>
+
+<div
+id="colorResult"
+class="big-result">
+
+🎨
+
+</div>
+
+<div style="text-align:center;">
+
+<button
+class="pink"
+onclick="colorOfDay()">
+
+🌈 Pick a Color
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- VOCABULARY -->
+
+<section class="card">
+
+<h2>
+📚 Word of the Day
+</h2>
+
+<div
+id="wordResult"
+class="result">
+
+Click the button to discover today's word!
+
+</div>
+
+<div style="text-align:center;">
+
+<button
+class="purple"
+onclick="newWord()">
+
+📚 New Word
+
+</button>
+
+<button
+class="blue"
+onclick="readText('wordResult')">
+
+🔊 Read It
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- TIMER -->
+
 <section class="card timer">
 
 <h2>
-⏰ Class Timer
+⏰ Classroom Timer
 </h2>
 
 <div
@@ -1150,23 +1291,26 @@ class="timer-display">
 </div>
 
 <button
+class="pink"
 onclick="setTimer(5)">
 
-5 Min
+5 Minutes
 
 </button>
 
 <button
+class="purple"
 onclick="setTimer(10)">
 
-10 Min
+10 Minutes
 
 </button>
 
 <button
+class="blue"
 onclick="setTimer(15)">
 
-15 Min
+15 Minutes
 
 </button>
 
@@ -1176,7 +1320,7 @@ onclick="setTimer(15)">
 class="green"
 onclick="startTimer()">
 
-▶ Start
+▶ START
 
 </button>
 
@@ -1184,7 +1328,7 @@ onclick="startTimer()">
 class="yellow"
 onclick="pauseTimer()">
 
-⏸ Pause
+⏸ PAUSE
 
 </button>
 
@@ -1192,35 +1336,33 @@ onclick="pauseTimer()">
 class="red"
 onclick="resetTimer()">
 
-↻ Reset
+↻ RESET
 
 </button>
 
 </section>
 
 
-</div>
-
-
 <!-- QUESTION -->
 
-<section
-class="card"
-style="margin-top:18px;">
+<section class="card">
 
-<h2 style="text-align:center;">
+<h2>
 💡 Question of the Day
 </h2>
 
-<div class="question">
+<div
+id="question"
+class="result">
 
-<p id="question">
+What is something you are proud of?
 
-What is something you are proud of yourself for today?
+</div>
 
-</p>
+<div style="text-align:center;">
 
 <button
+class="purple"
 onclick="newQuestion()">
 
 🎲 New Question
@@ -1228,8 +1370,8 @@ onclick="newQuestion()">
 </button>
 
 <button
-class="purple"
-onclick="readElement('question')">
+class="blue"
+onclick="readText('question')">
 
 🔊 Read Question
 
@@ -1240,52 +1382,98 @@ onclick="readElement('question')">
 </section>
 
 
-<!-- READ BOARD -->
+<!-- MESSAGE -->
 
-<section
-class="card"
-style="margin-top:18px;text-align:center;">
+<section class="card">
 
 <h2>
-🔊 Read the Board
+💬 Miss Rachel's Message
 </h2>
 
-<p>
-Use this if you want the computer to read
-the board information aloud to the class.
-</p>
+<div
+id="message"
+class="result">
+
+Welcome to the STAR Board!
+Let's have a great day! 🌸
+
+</div>
 
 <button
 class="purple"
-onclick="readPage()">
+onclick="readText('message')">
 
-🔊 Read Board
-
-</button>
-
-<button
-class="secondary"
-onclick="stopReading()">
-
-⏹ Stop
+🔊 Read Message
 
 </button>
 
 </section>
 
 
-</main>
+<!-- CELEBRATION -->
+
+<section class="card" style="text-align:center;">
+
+<h2>
+🌟 STAR CELEBRATION
+</h2>
+
+<p>
+Did we have a great day?
+</p>
+
+<button
+class="yellow"
+onclick="celebrate()">
+
+🌟 WE WERE STARS!
+
+</button>
+
+</section>
+
+
+</div>
+
+
+<!-- CELEBRATION -->
+
+<div
+id="celebration"
+class="celebrate">
+
+<div class="celebrate-content">
+
+<div class="emoji">
+🌟🎉🦄🌸
+</div>
+
+<h1>
+YOU ARE A STAR!
+</h1>
+
+<p>
+Great job today!
+</p>
+
+<button
+class="yellow"
+onclick="closeCelebration()">
+
+💗 THANK YOU!
+
+</button>
+
+</div>
+
+</div>
 
 
 <footer>
 
-<strong>
-🌸 Miss Rachel's STAR Classroom 🌸
-</strong>
-
-<p>
+🌸 Miss Rachel's STAR Board 🌸
+<br>
 Learn • Grow • Shine ⭐
-</p>
 
 </footer>
 
@@ -1295,10 +1483,10 @@ Learn • Grow • Shine ⭐
 
 /* DATE */
 
-const today = new Date();
+const now = new Date();
 
 document.getElementById("date").textContent =
-today.toLocaleDateString(
+now.toLocaleDateString(
 "en-US",
 {
 weekday:"long",
@@ -1308,226 +1496,210 @@ year:"numeric"
 }
 );
 
-const hour = today.getHours();
+let hour = now.getHours();
 
-let greeting = "Good morning!";
+let greeting = "Good morning! 🌞";
 
 if(hour >= 12 && hour < 17) {
-    greeting = "Good afternoon!";
+    greeting = "Good afternoon! 🌸";
 }
 
 if(hour >= 17) {
-    greeting = "Good evening!";
+    greeting = "Good evening! 🌙";
 }
 
-document.getElementById("greeting").textContent =
-greeting + " 🌸";
+document.getElementById("greeting").textContent = greeting;
 
 
-/* DEFAULT SETTINGS */
+/* TEACHER MODE */
 
-const defaultSettings = {
+function toggleTeacher() {
 
-objectives:[],
+let panel =
+document.getElementById("teacherPanel");
 
-star:"",
+if(panel.style.display === "block") {
+    panel.style.display = "none";
+}
+else {
+    panel.style.display = "block";
+    loadTeacherData();
+}
 
-starMessage:"",
+}
 
-schedule:[],
 
-lunch:[],
+function saveBoard() {
+
+let data = {
+
+objectives:
+document.getElementById("objectivesInput").value,
+
+star:
+document.getElementById("starInput").value,
+
+starMessage:
+document.getElementById("starMessageInput").value,
+
+schedule:
+document.getElementById("scheduleInput").value,
+
+lunch:
+document.getElementById("lunchInput").value,
 
 message:
-"Welcome to Miss Rachel's STAR Classroom! Let's have a great day! 🌸",
+document.getElementById("messageInput").value,
 
-currentEvent:
-"Today's fun current event will appear here!"
+event:
+document.getElementById("eventInput").value
 
 };
 
-
-/* LOAD SETTINGS */
-
-function loadSettings() {
-
-const saved =
-localStorage.getItem(
-"starBoardSettings"
+localStorage.setItem(
+"starBoard",
+JSON.stringify(data)
 );
 
-const settings =
-saved
-? JSON.parse(saved)
-: defaultSettings;
+displayBoard(data);
 
-displaySettings(settings);
+alert("🌸 STAR Board updated!");
 
 }
 
 
-/* DISPLAY SETTINGS */
+function loadTeacherData() {
 
-function displaySettings(settings) {
+let saved =
+localStorage.getItem("starBoard");
 
-displayObjectives(
-settings.objectives
-);
+if(!saved) return;
 
-displayStar(
-settings.star,
-settings.starMessage
-);
+let data =
+JSON.parse(saved);
 
-displaySchedule(
-settings.schedule
-);
+document.getElementById("objectivesInput").value =
+data.objectives || "";
 
-displayLunch(
-settings.lunch
-);
+document.getElementById("starInput").value =
+data.star || "";
 
-document.getElementById(
-"dailyMessage"
-).textContent =
-settings.message;
+document.getElementById("starMessageInput").value =
+data.starMessage || "";
 
-document.getElementById(
-"currentEvent"
-).textContent =
-settings.currentEvent;
+document.getElementById("scheduleInput").value =
+data.schedule || "";
+
+document.getElementById("lunchInput").value =
+data.lunch || "";
+
+document.getElementById("messageInput").value =
+data.message || "";
+
+document.getElementById("eventInput").value =
+data.event || "";
 
 }
 
 
-/* OBJECTIVES */
+function displayBoard(data) {
 
-function displayObjectives(objectives) {
+let objectiveBox =
+document.getElementById("objectives");
 
-const container =
-document.getElementById(
-"objectives"
-);
+objectiveBox.innerHTML = "";
 
-container.innerHTML = "";
+let objectives =
+data.objectives
+.split("\n")
+.filter(x => x.trim() !== "");
 
 if(objectives.length === 0) {
 
-container.innerHTML = `
-
-<div class="empty-message">
-
-🎯 Today's learning objectives
-will be added here.
-
-</div>
-
-`;
-
-return;
+objectiveBox.innerHTML =
+'<div class="empty">Objectives will be added here.</div>';
 
 }
 
 objectives.forEach(
-function(objective,index) {
+function(item,index) {
 
-const div =
-document.createElement("div");
+objectiveBox.innerHTML += `
 
-div.className =
-"objective";
+<div class="objective">
 
-div.innerHTML = `
+<span>${index + 1}</span>
 
-<div class="objective-number">
-${index + 1}
-</div>
+${item}
 
-<div>
-${objective}
 </div>
 
 `;
-
-container.appendChild(div);
 
 });
 
-}
+if(data.star) {
 
-
-/* STAR */
-
-function displayStar(star,message) {
-
-if(!star) {
-
-document.getElementById(
-"starLetter"
-).textContent = "⭐";
-
-document.getElementById(
-"starFocus"
-).textContent =
-"Let's be STAR students!";
+document.getElementById("starFocus").innerHTML =
+`⭐ <strong>${data.star}</strong><br>
+${data.starMessage || ""}`;
 
 }
 
-else {
-
-document.getElementById(
-"starLetter"
-).textContent =
-star.charAt(0);
-
-document.getElementById(
-"starFocus"
-).textContent =
-star;
-
-}
-
-document.getElementById(
-"starMessage"
-).textContent =
-message ||
-"Safe • Try Your Best • Act Responsibly • Respect Others";
-
-}
-
-
-/* SCHEDULE */
-
-function displaySchedule(schedule) {
-
-const container =
-document.getElementById(
-"schedule"
+displayList(
+"schedule",
+data.schedule,
+"📅 Schedule will be added here."
 );
 
-container.innerHTML = "";
+displayList(
+"lunch",
+data.lunch,
+"🍎 Lunch options will be added here."
+);
 
-if(schedule.length === 0) {
+if(data.message) {
 
-container.innerHTML = `
+document.getElementById("message").textContent =
+data.message;
 
-<div class="empty-message">
+}
 
-📅 Today's schedule
-will be added here.
+if(data.event) {
 
-</div>
+document.getElementById("currentEvent").textContent =
+data.event;
 
-`;
+}
+
+}
+
+
+function displayList(id,value,emptyText) {
+
+let box =
+document.getElementById(id);
+
+box.innerHTML = "";
+
+let items =
+value
+.split("\n")
+.filter(x => x.trim() !== "");
+
+if(items.length === 0) {
+
+box.innerHTML =
+`<div class="empty">${emptyText}</div>`;
 
 return;
 
 }
 
-schedule.forEach(
+items.forEach(
 function(item) {
 
-const div =
+let div =
 document.createElement("div");
 
 div.className =
@@ -1536,396 +1708,133 @@ div.className =
 div.textContent =
 item;
 
-container.appendChild(div);
+box.appendChild(div);
 
 });
 
 }
 
 
-/* LUNCH */
+/* FEELINGS */
 
-function displayLunch(lunch) {
+function feeling(element,answer) {
 
-const container =
-document.getElementById(
-"lunch"
+document
+.querySelectorAll(".choice")
+.forEach(
+x => x.classList.remove("selected")
 );
 
-container.innerHTML = "";
+element.classList.add("selected");
 
-if(lunch.length === 0) {
-
-container.innerHTML = `
-
-<div class="empty-message">
-
-🍎 Today's lunch options
-will be added here.
-
-</div>
-
-`;
-
-return;
-
-}
-
-lunch.forEach(
-function(item) {
-
-const div =
-document.createElement("div");
-
-div.className =
-"lunch-option";
-
-div.textContent =
-"🍎 " + item;
-
-container.appendChild(div);
-
-});
+document.getElementById("feelingResult").innerHTML =
+`Today our class is feeling <strong>${answer}</strong>! 💗`;
 
 }
 
 
-/* TEACHER MODE */
+/* OBJECTIVES */
 
-function toggleTeacherMode() {
+function objectiveCheck(type) {
 
-const panel =
-document.getElementById(
-"teacherPanel"
-);
+let result =
+document.getElementById("objectiveResult");
 
-if(panel.style.display === "block") {
+if(type === "ready") {
 
-panel.style.display = "none";
+result.innerHTML =
+"⭐ Awesome! We are ready to learn!";
 
 }
 
 else {
 
-panel.style.display = "block";
-
-loadTeacherInputs();
-
-panel.scrollIntoView({
-behavior:"smooth"
-});
+result.innerHTML =
+"🙋 Asking for help is a STAR behavior!";
 
 }
 
 }
 
 
-function closeTeacherMode() {
+/* STAR */
 
-document.getElementById(
-"teacherPanel"
-).style.display = "none";
+function starChoice(letter) {
 
-}
+let messages = {
 
+S:"🛡️ We will be SAFE today!",
 
-function loadTeacherInputs() {
+T:"💪 We will TRY OUR BEST!",
 
-const saved =
-localStorage.getItem(
-"starBoardSettings"
-);
+A:"⭐ We will ACT RESPONSIBLY!",
 
-const settings =
-saved
-? JSON.parse(saved)
-: defaultSettings;
-
-document.getElementById(
-"objectiveInput"
-).value =
-settings.objectives.join("\n");
-
-document.getElementById(
-"starInput"
-).value =
-settings.star;
-
-document.getElementById(
-"starMessageInput"
-).value =
-settings.starMessage;
-
-document.getElementById(
-"scheduleInput"
-).value =
-settings.schedule.join("\n");
-
-document.getElementById(
-"lunchInput"
-).value =
-settings.lunch.join("\n");
-
-document.getElementById(
-"messageInput"
-).value =
-settings.message;
-
-document.getElementById(
-"currentEventInput"
-).value =
-settings.currentEvent;
-
-}
-
-
-function saveTeacherSettings() {
-
-const settings = {
-
-objectives:
-document.getElementById(
-"objectiveInput"
-).value
-.split("\n")
-.map(x => x.trim())
-.filter(x => x !== ""),
-
-star:
-document.getElementById(
-"starInput"
-).value,
-
-starMessage:
-document.getElementById(
-"starMessageInput"
-).value,
-
-schedule:
-document.getElementById(
-"scheduleInput"
-).value
-.split("\n")
-.map(x => x.trim())
-.filter(x => x !== ""),
-
-lunch:
-document.getElementById(
-"lunchInput"
-).value
-.split("\n")
-.map(x => x.trim())
-.filter(x => x !== ""),
-
-message:
-document.getElementById(
-"messageInput"
-).value ||
-"Welcome to Miss Rachel's STAR Classroom! Let's have a great day! 🌸",
-
-currentEvent:
-document.getElementById(
-"currentEventInput"
-).value ||
-"Today's fun current event will appear here!"
+R:"💗 We will RESPECT OTHERS!"
 
 };
 
-localStorage.setItem(
-"starBoardSettings",
-JSON.stringify(settings)
-);
-
-displaySettings(settings);
-
-alert(
-"🌸 Today's classroom board has been updated!"
-);
-
-closeTeacherMode();
+document.getElementById("starFocus").innerHTML =
+messages[letter];
 
 }
 
 
-/* WEATHER */
+/* CURRENT EVENTS */
 
-function getWeather() {
+function eventTopic(topic) {
 
-const description =
-document.getElementById(
-"weatherDescription"
-);
+let messages = {
 
-description.textContent =
-"Getting weather...";
+space:"🚀 SPACE: Let's learn something amazing about space!",
 
-if(!navigator.geolocation) {
+sports:"🏀 SPORTS: Let's talk about an exciting sports story!",
 
-description.textContent =
-"Weather unavailable.";
+animals:"🐾 ANIMALS: Let's learn something amazing about animals!",
 
-return;
+science:"🔬 SCIENCE: Let's discover something scientists are learning!",
 
-}
+earth:"🌎 EARTH: Let's learn something interesting about our planet!",
 
-navigator.geolocation.getCurrentPosition(
+technology:"🤖 TECHNOLOGY: Let's see how technology is changing the world!",
 
-async function(position) {
+ocean:"🌊 OCEANS: Let's explore something amazing about the ocean!",
 
-const latitude =
-position.coords.latitude;
+positive:"🎉 GOOD NEWS: Let's find something positive happening in the world!"
 
-const longitude =
-position.coords.longitude;
+};
 
-try {
-
-const response =
-await fetch(
-`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code&temperature_unit=fahrenheit`
-);
-
-const data =
-await response.json();
-
-const temperature =
-Math.round(
-data.current.temperature_2m
-);
-
-document.getElementById(
-"temperature"
-).textContent =
-temperature + "°F";
-
-const code =
-data.current.weather_code;
-
-let icon = "🌤️";
-
-let text = "Partly cloudy";
-
-if(code === 0) {
-
-icon = "☀️";
-text = "Clear skies";
-
-}
-
-else if(code <= 3) {
-
-icon = "⛅";
-text = "Partly cloudy";
-
-}
-
-else if(code >= 51 && code <= 67) {
-
-icon = "🌧️";
-text = "Rain";
-
-}
-
-else if(code >= 71 && code <= 77) {
-
-icon = "❄️";
-text = "Snow";
-
-}
-
-else if(code >= 80 && code <= 82) {
-
-icon = "🌦️";
-text = "Rain showers";
-
-}
-
-else if(code >= 95) {
-
-icon = "⛈️";
-text = "Thunderstorms";
-
-}
-
-document.getElementById(
-"weatherIcon"
-).textContent =
-icon;
-
-description.textContent =
-text;
-
-}
-
-catch {
-
-description.textContent =
-"Weather unavailable.";
-
-}
-
-},
-
-function() {
-
-description.textContent =
-"Allow location access.";
-
-}
-
-);
+document.getElementById("currentEvent").textContent =
+messages[topic];
 
 }
 
 
-/* FUN CURRENT EVENTS */
+function randomEvent() {
 
-const eventTopics = [
-
-"🚀 SPACE — What exciting things are scientists discovering about space?",
-
-"🦖 SCIENCE — What cool discovery have scientists made recently?",
-
-"🐾 ANIMALS — What amazing animal story is happening right now?",
-
-"🏀 SPORTS — What exciting sports story is happening?",
-
-"🌎 WORLD — What is something interesting happening around the world?",
-
-"🌱 EARTH — What are people doing to help our planet?",
-
-"🤖 TECHNOLOGY — What new technology is being created?",
-
-"🎉 POSITIVE NEWS — What good things are happening?",
-
-"🌊 OCEANS — What are scientists learning about our oceans?",
-
-"🌋 EARTH SCIENCE — What interesting thing is happening on Earth?"
-
+let topics = [
+"space",
+"sports",
+"animals",
+"science",
+"earth",
+"technology",
+"ocean",
+"positive"
 ];
 
+let topic =
+topics[Math.floor(Math.random()*topics.length)];
 
-function newEventTopic() {
-
-const topic =
-eventTopics[
-Math.floor(
-Math.random() *
-eventTopics.length
-)
-];
-
-document.getElementById(
-"eventTopic"
-).textContent =
-topic;
+eventTopic(topic);
 
 }
 
 
 /* CLEANING */
 
-const cleaningJobs = [
+function cleaningChallenge() {
+
+let jobs = [
 
 "🧹 Wipe a table",
 
@@ -1937,52 +1846,42 @@ const cleaningJobs = [
 
 "✏️ Organize the pencils",
 
-"🧸 Put classroom supplies away",
+"📦 Organize classroom supplies",
 
-"🧼 Wipe a classroom surface",
-
-"📦 Organize a supply area"
+"🧼 Wipe a classroom surface"
 
 ];
 
+let job =
+jobs[Math.floor(Math.random()*jobs.length)];
 
-function newCleaningJob() {
-
-const job =
-cleaningJobs[
-Math.floor(
-Math.random() *
-cleaningJobs.length
-)
-];
-
-document.getElementById(
-"cleaningResult"
-).textContent =
+document.getElementById("cleaningResult").textContent =
 job;
 
 }
 
 
-function completeCleaning() {
+function cleaningDone() {
 
-document.getElementById(
-"cleaningResult"
-).textContent =
-"🌟 Great job! Our classroom is shining!";
+document.getElementById("cleaningResult").textContent =
+"🌟 GREAT JOB! OUR CLASSROOM IS SHINING!";
+
+addPoint();
 
 }
 
 
 /* SPORTS */
 
-const sportsChallenges = [
+function sportsChallenge() {
+
+let challenges = [
 
 "🏀 Name your favorite basketball team.",
 
 "🏈 Name one football position.",
 
-"⚾ How many bases are on a baseball field?",
+"⚾ How many bases are there in baseball?",
 
 "⚽ What is your favorite soccer team?",
 
@@ -1994,165 +1893,263 @@ const sportsChallenges = [
 
 ];
 
+let challenge =
+challenges[Math.floor(Math.random()*challenges.length)];
 
-function newSportsChallenge() {
-
-const challenge =
-sportsChallenges[
-Math.floor(
-Math.random() *
-sportsChallenges.length
-)
-];
-
-document.getElementById(
-"sportsResult"
-).textContent =
+document.getElementById("sportsResult").textContent =
 challenge;
 
 }
 
 
-/* UNICORNS */
+/* UNICORN */
 
-const unicornMessages = [
+function unicorn() {
+
+let messages = [
 
 "🦄 You are magical just the way you are!",
 
 "🌈 Believe in yourself!",
 
-"✨ Keep shining bright!",
+"✨ Keep shining!",
 
-"💖 You can do hard things!",
+"💗 You can do hard things!",
 
 "🌸 Today is a great day to learn!",
 
 "⭐ Never give up!",
 
-"🦄 Be kind and brave!",
-
-"🌈 Let your imagination shine!"
+"🦄 Be kind and brave!"
 
 ];
 
+let message =
+messages[Math.floor(Math.random()*messages.length)];
 
-function newUnicornMessage() {
-
-const message =
-unicornMessages[
-Math.floor(
-Math.random() *
-unicornMessages.length
-)
-];
-
-document.getElementById(
-"unicornResult"
-).textContent =
+document.getElementById("unicornResult").textContent =
 message;
 
 }
 
 
-/* COLOR */
+/* KINDNESS */
 
-const colors = [
+function kindnessChallenge() {
 
-["💗","Pink"],
+let challenges = [
 
-["💜","Purple"],
+"💗 Give someone a compliment.",
 
-["💙","Blue"],
+"😊 Smile at someone.",
 
-["💚","Green"],
+"🤝 Help a classmate.",
 
-["💛","Yellow"],
+"🌸 Say thank you.",
 
-["🧡","Orange"],
+"⭐ Encourage someone.",
 
-["❤️","Red"],
+"🫶 Include someone in an activity.",
 
-["🌈","Rainbow"]
+"💬 Say something kind."
 
 ];
 
+let challenge =
+challenges[Math.floor(Math.random()*challenges.length)];
 
-function newColor() {
+document.getElementById("kindnessResult").textContent =
+challenge;
 
-const color =
-colors[
-Math.floor(
-Math.random() *
-colors.length
-)
+}
+
+
+/* WOULD YOU RATHER */
+
+let currentA = "";
+let currentB = "";
+
+function newRather() {
+
+let questions = [
+
+["fly like a unicorn 🦄","breathe underwater 🌊"],
+
+["play basketball 🏀","play soccer ⚽"],
+
+["have a pet dragon 🐉","have a pet unicorn 🦄"],
+
+["visit space 🚀","explore the ocean 🌊"],
+
+["be super strong 💪","be able to fly 🪽"],
+
+["have a giant bedroom 🛏️","have a giant classroom 🎨"],
+
+["eat pizza 🍕","eat tacos 🌮"]
+
 ];
 
-document.getElementById(
-"colorDisplay"
-).textContent =
-color[0];
+let q =
+questions[Math.floor(Math.random()*questions.length)];
 
-document.getElementById(
-"colorName"
-).textContent =
-"Today's color is " +
-color[1] + "!";
+currentA = q[0];
+currentB = q[1];
+
+document.getElementById("ratherQuestion").innerHTML =
+`Would you rather...<br><br>
+<strong>A:</strong> ${currentA}<br>
+<strong>B:</strong> ${currentB}`;
+
+}
+
+function ratherA() {
+
+document.getElementById("ratherQuestion").innerHTML +=
+"<br><br>⭐ The class chose A!";
+
+}
+
+function ratherB() {
+
+document.getElementById("ratherQuestion").innerHTML +=
+"<br><br>💗 The class chose B!";
+
+}
+
+
+/* SENSORY */
+
+function sensory(type) {
+
+let messages = {
+
+quiet:"🤫 A quiet moment can help your brain reset.",
+
+movement:"🚶 Movement can help wake up your brain.",
+
+water:"💧 Grab some water and take a drink.",
+
+breathing:"🌬️ Take three slow breaths."
+
+};
+
+document.getElementById("sensoryResult").textContent =
+messages[type];
 
 }
 
 
 /* BRAIN BREAK */
 
-const brainBreaks = [
+function brainBreak() {
+
+let breaks = [
 
 "🙆 Stand up and stretch!",
+
+"💃 Dance for 20 seconds!",
 
 "🌬️ Take five slow breaths.",
 
 "💧 Take a drink of water.",
 
-"👀 Name five things you see.",
-
 "🚶 Walk around for 30 seconds.",
 
-"💃 Dance for 20 seconds!",
-
-"⭐ Do ten jumping jacks.",
+"⭐ Do ten jumping jacks!",
 
 "🧘 Stretch your shoulders.",
 
-"😊 Smile and take three deep breaths.",
+"😊 Take three deep breaths.",
 
-"🐢 Move slowly like a turtle.",
-
-"🦘 Do five big jumps.",
-
-"🌳 Pretend you are a tree and stretch your branches."
+"🌳 Stretch like a tree!"
 
 ];
 
+let choice =
+breaks[Math.floor(Math.random()*breaks.length)];
 
-function newBrainBreak() {
-
-const breakItem =
-brainBreaks[
-Math.floor(
-Math.random() *
-brainBreaks.length
-)
-];
-
-document.getElementById(
-"brainBreak"
-).textContent =
-breakItem;
+document.getElementById("brainResult").textContent =
+choice;
 
 }
 
 
-/* QUESTION */
+/* COLOR */
 
-const questions = [
+function colorOfDay() {
+
+let colors = [
+
+"💗 PINK",
+
+"💜 PURPLE",
+
+"💙 BLUE",
+
+"💚 GREEN",
+
+"💛 YELLOW",
+
+"🧡 ORANGE",
+
+"❤️ RED",
+
+"🌈 RAINBOW"
+
+];
+
+let color =
+colors[Math.floor(Math.random()*colors.length)];
+
+document.getElementById("colorResult").textContent =
+"🎨 Today's color is " + color + "!";
+
+}
+
+
+/* VOCABULARY */
+
+function newWord() {
+
+let words = [
+
+["Curious","Wanting to learn or know something."],
+
+["Respect","Treating people and things with care."],
+
+["Responsibility","Doing what you are supposed to do."],
+
+["Challenge","Something that takes effort."],
+
+["Goal","Something you are working toward."],
+
+["Teamwork","Working together to accomplish something."],
+
+["Kindness","Being friendly, helpful, and caring."],
+
+["Persevere","Keep trying even when something is difficult."],
+
+["Observe","To carefully look at or notice something."],
+
+["Predict","To make a good guess about what might happen."]
+
+];
+
+let word =
+words[Math.floor(Math.random()*words.length)];
+
+document.getElementById("wordResult").innerHTML =
+`<strong>${word[0]}</strong><br><br>
+${word[1]}`;
+
+}
+
+
+/* QUESTIONS */
+
+function newQuestion() {
+
+let questions = [
 
 "What is something you are proud of?",
 
@@ -2160,7 +2157,7 @@ const questions = [
 
 "What is one thing you are good at?",
 
-"What is something that makes you happy?",
+"What makes you happy?",
 
 "What is one goal you have today?",
 
@@ -2170,31 +2167,75 @@ const questions = [
 
 "What is one kind thing you can do today?",
 
-"If you could have any unicorn, what would it look like?",
-
 "What is your favorite animal?",
 
 "What is your favorite color?",
 
-"If you could visit anywhere, where would you go?"
+"If you could visit anywhere, where would you go?",
+
+"What is something you want to learn?"
 
 ];
 
+let question =
+questions[Math.floor(Math.random()*questions.length)];
 
-function newQuestion() {
-
-const question =
-questions[
-Math.floor(
-Math.random() *
-questions.length
-)
-];
-
-document.getElementById(
-"question"
-).textContent =
+document.getElementById("question").textContent =
 question;
+
+}
+
+
+/* POINTS */
+
+let points =
+parseInt(
+localStorage.getItem("starPoints") || 0
+);
+
+document.getElementById("points").textContent =
+points;
+
+
+function addPoint() {
+
+points++;
+
+savePoints();
+
+}
+
+function addFivePoints() {
+
+points += 5;
+
+savePoints();
+
+}
+
+function resetPoints() {
+
+points = 0;
+
+savePoints();
+
+}
+
+function savePoints() {
+
+localStorage.setItem(
+"starPoints",
+points
+);
+
+document.getElementById("points").textContent =
+points;
+
+if(points > 0 && points % 10 === 0) {
+
+celebrate();
+
+}
 
 }
 
@@ -2208,17 +2249,13 @@ let timerInterval = null;
 
 function updateTimer() {
 
-const minutes =
-Math.floor(
-timerSeconds / 60
-);
+let minutes =
+Math.floor(timerSeconds / 60);
 
-const seconds =
+let seconds =
 timerSeconds % 60;
 
-document.getElementById(
-"timer"
-).textContent =
+document.getElementById("timer").textContent =
 String(minutes).padStart(2,"0")
 +
 ":"
@@ -2230,14 +2267,11 @@ String(seconds).padStart(2,"0");
 
 function setTimer(minutes) {
 
-clearInterval(
-timerInterval
-);
+clearInterval(timerInterval);
 
 timerInterval = null;
 
-timerSeconds =
-minutes * 60;
+timerSeconds = minutes * 60;
 
 updateTimer();
 
@@ -2255,15 +2289,11 @@ function() {
 
 if(timerSeconds <= 0) {
 
-clearInterval(
-timerInterval
-);
+clearInterval(timerInterval);
 
 timerInterval = null;
 
-alert(
-"⏰ Time is up!"
-);
+celebrate();
 
 return;
 
@@ -2282,9 +2312,7 @@ updateTimer();
 
 function pauseTimer() {
 
-clearInterval(
-timerInterval
-);
+clearInterval(timerInterval);
 
 timerInterval = null;
 
@@ -2293,9 +2321,7 @@ timerInterval = null;
 
 function resetTimer() {
 
-clearInterval(
-timerInterval
-);
+clearInterval(timerInterval);
 
 timerInterval = null;
 
@@ -2308,88 +2334,197 @@ updateTimer();
 
 /* READ ALOUD */
 
-function readElement(id) {
-
-stopReading();
-
-const element =
-document.getElementById(id);
-
-if(!element)
-return;
-
-const speech =
-new SpeechSynthesisUtterance(
-element.innerText
-);
-
-speech.rate = .85;
-
-window.speechSynthesis.speak(
-speech
-);
-
-}
-
-
-function readObjectives() {
-
-stopReading();
-
-const objectives =
-document.getElementById(
-"objectives"
-).innerText;
-
-const speech =
-new SpeechSynthesisUtterance(
-"Today's learning objectives. " +
-objectives
-);
-
-speech.rate = .85;
-
-window.speechSynthesis.speak(
-speech
-);
-
-}
-
-
-function readPage() {
-
-stopReading();
-
-const speech =
-new SpeechSynthesisUtterance(
-document.body.innerText
-);
-
-speech.rate = .85;
-
-window.speechSynthesis.speak(
-speech
-);
-
-}
-
-
-function stopReading() {
+function readText(id) {
 
 window.speechSynthesis.cancel();
+
+let text =
+document.getElementById(id).innerText;
+
+let speech =
+new SpeechSynthesisUtterance(text);
+
+speech.rate = .85;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+/* CELEBRATION */
+
+function celebrate() {
+
+let popup =
+document.getElementById("celebration");
+
+popup.style.display = "flex";
+
+for(let i=0;i<35;i++) {
+
+let confetti =
+document.createElement("div");
+
+confetti.className =
+"confetti";
+
+confetti.textContent =
+["⭐","🌸","💗","🎉","🦄","🌈"][
+Math.floor(Math.random()*6)
+];
+
+confetti.style.left =
+Math.random()*100 + "%";
+
+confetti.style.animationDelay =
+Math.random()*1.5 + "s";
+
+popup.appendChild(confetti);
+
+}
+
+}
+
+
+function closeCelebration() {
+
+document.getElementById("celebration").style.display =
+"none";
+
+document
+.querySelectorAll(".confetti")
+.forEach(x => x.remove());
+
+}
+
+
+/* WEATHER */
+
+function getWeather() {
+
+if(!navigator.geolocation) {
+
+document.getElementById("weatherDescription").textContent =
+"Weather unavailable.";
+
+return;
+
+}
+
+navigator.geolocation.getCurrentPosition(
+
+async function(position) {
+
+let lat =
+position.coords.latitude;
+
+let lon =
+position.coords.longitude;
+
+try {
+
+let response =
+await fetch(
+`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&temperature_unit=fahrenheit`
+);
+
+let data =
+await response.json();
+
+let temp =
+Math.round(
+data.current.temperature_2m
+);
+
+document.getElementById("temperature").textContent =
+temp + "°F";
+
+let code =
+data.current.weather_code;
+
+let icon = "🌤️";
+let description = "Partly cloudy";
+
+if(code === 0) {
+
+icon = "☀️";
+description = "Clear skies";
+
+}
+
+else if(code <= 3) {
+
+icon = "⛅";
+description = "Partly cloudy";
+
+}
+
+else if(code >= 51 && code <= 67) {
+
+icon = "🌧️";
+description = "Rain";
+
+}
+
+else if(code >= 80 && code <= 82) {
+
+icon = "🌦️";
+description = "Rain showers";
+
+}
+
+else if(code >= 95) {
+
+icon = "⛈️";
+description = "Thunderstorm";
+
+}
+
+document.getElementById("weatherIcon").textContent =
+icon;
+
+document.getElementById("weatherDescription").textContent =
+description;
+
+}
+
+catch {
+
+document.getElementById("weatherDescription").textContent =
+"Weather unavailable.";
+
+}
+
+}
+
+);
 
 }
 
 
 /* START */
 
-loadSettings();
+let saved =
+localStorage.getItem("starBoard");
+
+if(saved) {
+
+displayBoard(
+JSON.parse(saved)
+);
+
+}
 
 updateTimer();
 
 getWeather();
 
+newRather();
+
+newWord();
+
 </script>
+
 
 </body>
 
